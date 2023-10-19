@@ -1,0 +1,22 @@
+footer {
+    z-index: 12;
+    font-size: 16px;
+    margin-top: 1.25rem;
+    background: #000000;
+
+
+}
+
+
+
+@media (max-width: 937px) {
+    footer {
+    
+    }
+}
+
+@media (max-width: 500px) {
+    footer {
+       
+    }
+}

@@ -1,0 +1,17 @@
+export const imgSgfw1= "/images/saigon_fw/1.webp"
+export const imgSgfw2= "/images/saigon_fw/2.webp"
+export const imgSgfw3= "/images/saigon_fw/3.webp"
+export const imgSgfw4= "/images/saigon_fw/4.webp"
+export const imgSgfw5= "/images/saigon_fw/5.webp"
+export const imgSgfw6= "/images/saigon_fw/6.webp"
+export const imgSgfw7= "/images/saigon_fw/7.webp"
+export const imgSgfw8= "/images/saigon_fw/8.webp"
+export const imgSgfw9= "/images/saigon_fw/9.webp"
+export const imgSgfw10= "/images/saigon_fw/10.webp"
+export const imgSgfw11= "/images/saigon_fw/11.webp"
+export const imgSgfw12= "/images/saigon_fw/12.webp"
+export const imgSgfw13= "/images/saigon_fw/13.webp"
+export const imgSgfw14= "/images/saigon_fw/14.webp"
+export const imgSgfw15= "/images/saigon_fw/15.webp"
+
+
