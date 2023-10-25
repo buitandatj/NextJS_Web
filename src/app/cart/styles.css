@@ -1,0 +1,24 @@
+@media (max-width: 800px) {
+  .nav_bar_cart {
+    display: flex;
+    flex-direction: column;
+  }
+  .nav_bar_cart h4 {
+    visibility: hidden;
+  }
+  .item_cart_right {
+    width: 200px;
+    display: flex;
+    gap: 0;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+  }
+  .item_cart_right img {
+    width: 150px;
+  }
+  .item_cart_title{
+    padding-left: 10px;
+    width: 200px;
+  }
+}

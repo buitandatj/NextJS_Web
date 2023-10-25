@@ -2,6 +2,8 @@
 @import '../components//footer/styles.css';
 @import '../components/Header/styles.css';
 @import '../app/cart/styles.css';
-@import '../app/cart/checkout/styles.css';
+@import '../app/checkout/styles.css';
 @import '../components/FilterCategory/style.css';
-@import '../components/Product/styles.css'
+@import '../components/Product/styles.css';
+@import '../app/products/[category]/[id]/styles.css';
+@import '../components/Cart/styles.css'

@@ -1,7 +1,10 @@
-import { IProducts } from './IProducts';
+import { IProducts } from "./IProducts";
 
-export interface ICart {
-  cart: IProducts[] | any;
-  setCart: React.Dispatch<React.SetStateAction<IProducts[]>>;
-  total: number;
+export interface ICartItem extends IProducts {
+  item: any;
+  count: number;
+}
+export interface ICartState {
+  cart: any;
+  items: ICartItem[];
 }

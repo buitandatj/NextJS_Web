@@ -1,22 +1,29 @@
 footer {
-    z-index: 12;
-    font-size: 16px;
-    margin-top: 1.25rem;
-    background: #000000;
-
-
+  z-index: 12;
+  font-size: 16px;
+  margin-top: 1.25rem;
+  background: #000000;
 }
 
-
-
-@media (max-width: 937px) {
-    footer {
-    
-    }
-}
-
-@media (max-width: 500px) {
-    footer {
-       
-    }
+@media (max-width: 480px) {
+  .footer_main {
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap:25px;
+  }
+  .main_right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .main_center {
+    text-align: center;
+  }
+  .main_left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
 }

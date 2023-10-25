@@ -4,7 +4,7 @@ import type { Metadata } from 'next';
 import Header from '@/components/Header/Header';
 import Footer from '@/components/Footer/Footer';
 import ProviderContext from '@/app/Provider';
-
+import { ToastContainer } from 'react-toastify';;
 
 export const metadata: Metadata = {
   title: 'BATRA studio',
@@ -19,11 +19,12 @@ export default function RootLayout({
     <html lang="en">
       <body >
         <ProviderContext>
-            <Header />
-            <div className='App'>
-              {children}
-            </div>
-            <Footer />
+          <Header />
+          <ToastContainer autoClose={2000}/>
+          <div className='App'>
+            {children}
+          </div>
+          <Footer />
         </ProviderContext>
       </body>
     </html>

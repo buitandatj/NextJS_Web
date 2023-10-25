@@ -1,0 +1,20 @@
+input,
+textarea {
+  height: 50px;
+  border: 1px solid black;
+}
+
+@media(max-width:480px){
+  .checkout_main{
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .checkout_form{
+    width: 100%;
+    padding: 0 5px;
+  }
+  .checkout_items{
+    width: 100%;
+    padding: 0 5px;
+  }
+}

@@ -6,11 +6,11 @@ const About = () => {
     return (
         <div className='container mx-auto mb-20'>
             <h3 className='font-bold text-3xl tracking-widest pl-10 mb-10'>ABOUT</h3>
-            <div className='flex'>
-                <div className='w-[50%]'>
-                    <Image src="/images/about_img.webp" alt="about" width={700} height={600} />
+            <div className='about__main flex gap-10'>
+                <div className='img__about w-[600px] sm:w-full'>
+                    <Image src="/images/about_img.webp" alt="about" width={768} height={600} />
                 </div>
-                <div className='w-[50%] flex flex-col text-justify gap-10 text-xl'>
+                <div className='content__about w-[400px] flex flex-col text-justify gap-10 text-xl sm:w-full'>
                     <p>
                         BATRA Studio was founded in the heart of Saigon, Vietnam in 2016 by Tom Trandt Minh Đạo - a Parsons graduate.
                     </p>

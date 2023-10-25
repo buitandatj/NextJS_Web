@@ -1,0 +1,17 @@
+@media(max-width:480px){
+    .product_detail{
+        display: flex;
+        flex-direction: column;
+    }
+    .detail__content{
+        width: 100%;
+        text-align: center;
+    }
+    .btn_add_cart{
+        margin: 0 auto;
+        width: 95%;
+    }
+    img{
+        width: 100%;
+    }
+}

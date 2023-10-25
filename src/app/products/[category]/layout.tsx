@@ -1,5 +1,3 @@
-
-import ProviderContext from '@/app/Provider'
 import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Products - BATRA',
@@ -11,10 +9,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <ProviderContext>
       <div>
         {children}
       </div>
-    </ProviderContext>
   )
 }
