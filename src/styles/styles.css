@@ -6,4 +6,4 @@
 @import '../components/FilterCategory/style.css';
 @import '../components/Product/styles.css';
 @import '../app/products/[category]/[id]/styles.css';
-@import '../components/Cart/styles.css'
+@import '../app/products/[category]/styles.css'

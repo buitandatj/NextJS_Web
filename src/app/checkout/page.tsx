@@ -122,7 +122,7 @@ const CheckOut = () => {
                         {cartItems.map((item: ICartItem) => (
                             <div key={item.id} >
                                 <div className='flex justify-between items-center'>
-                                    <div className='w-[130px] h-[130px]'>
+                                    <div className='w-[100px] h-[150px]'>
                                         <img src={item.image} alt={item.productName} />
                                     </div>
                                     <div className='text-end'>

@@ -2,7 +2,7 @@ import { addCart, deleteFromCart } from "@/constants/Message";
 import { ICartItem, ICartState } from "@/type/ICart";
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 const loadCartFromLocalStorage = () => {
-  const cartData = localStorage.getItem("cart");
+  const cartData = window.localStorage.getItem("cart");
   return cartData ? JSON.parse(cartData).items : [];
 };
 const saveCartToLocalStorage = (cartItems: ICartItem[]) => {
