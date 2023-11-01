@@ -1,5 +1,5 @@
 "use client"
-import { addToCart } from '@/redux/cartSlice'
+import { addToCart } from '@/store/cartSlice'
 import { IProducts } from '@/type/IProducts'
 import React from 'react'
 import { useDispatch } from 'react-redux'

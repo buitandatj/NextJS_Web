@@ -1,8 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 'use client'
 import Button from '@/components/Button/Button';
-import { deleteCart, ItemsCount } from '@/redux/cartSlice';
-import { RootState } from '@/redux/store';
+import { deleteCart, ItemsCount } from '@/store/cartSlice';
+import { RootState } from '@/store/store';
 import { styleBtn, stylesBtnDelete } from '@/styles/styleComponentButton';
 import { ICartItem } from '@/type/ICart';
 import React from 'react';

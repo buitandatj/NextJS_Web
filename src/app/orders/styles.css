@@ -1,0 +1,20 @@
+@media (max-width: 480px) {
+  .form_order_check {
+    width: 100%;
+    gap: 20px;
+  }
+  .text_check{
+    padding-left: 10px;
+  }
+  .input_check {
+    display: flex;
+    flex-direction: column;
+  }
+  .input_check input {
+    width: 90%;
+  }
+  .btn_check{
+    width: 90%;
+    justify-content: center;
+  }
+}

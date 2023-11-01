@@ -1,12 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
 'use client'
+import { instance } from '@/api/Api';
 import Button from '@/components/Button/Button';
 import { CheckMail, checkAddress, checkName, checkPhone, orderSuccess } from '@/constants/Message';
-import { clearCart } from '@/redux/cartSlice';
-import { RootState } from '@/redux/store';
+import { clearCart } from '@/store/cartSlice';
+import { RootState } from '@/store/store';
 import { stylesBtnOrder } from '@/styles/styleComponentButton';
 import { ICartItem } from '@/type/ICart';
-import axios from 'axios';
 import Link from 'next/link';
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -58,7 +58,7 @@ const CheckOut = () => {
                 total: total.toFixed(1),
             }
         };
-        const res = await axios.post('http://localhost:3000/orders', orderData)
+        const res = await instance.post('orders', orderData)
         try {
             dispatch(clearCart());
             setContactEmail('');
@@ -127,7 +127,7 @@ const CheckOut = () => {
                                     </div>
                                     <div className='text-end'>
                                         <p className='text-lg font-medium tracking-widest'>{item.productName} ({item.count})</p>
-                                        <p className='text-lg font-bold'>${item.price * item.count}</p>
+                                        <p className='text-lg font-bold'>${item?.price * item.count}</p>
                                     </div>
                                 </div>
                                 <hr />
@@ -140,7 +140,7 @@ const CheckOut = () => {
                     </div>
                     {
                         orderPlaced ? <div className='flex justify-end mt-5'>
-                           <Link href='products/all'><Button title='continue shopping' BtnStyles={stylesBtnOrder} /></Link> 
+                            <Link href='products/all'><Button title='continue shopping' BtnStyles={stylesBtnOrder} /></Link>
                         </div> :
                             <div className='flex justify-end mt-5' onClick={placeOrder}>
                                 <Button title='complete order' BtnStyles={stylesBtnOrder} />

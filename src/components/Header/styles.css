@@ -27,7 +27,7 @@ ul li {
 }
 
 @media (max-width: 480px) {
-  .header{
+  .header {
     height: 140px;
   }
   .menu_header {
@@ -37,5 +37,11 @@ ul li {
     position: absolute;
     top: 0;
     background-color: white;
+  }
+  .text_user {
+    display: none;
+  }
+  .title_shop {
+    margin-left: 10px;
   }
 }

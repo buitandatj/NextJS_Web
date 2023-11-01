@@ -7,7 +7,6 @@ export default async function Products({ params: { category } }: { params: { cat
     return (
         <div className='container mx-auto'>
             <h3 className='font-bold text-3xl tracking-widest pl-10'>Products</h3>
-
             <div className='grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5 mt-10'>
                 <Filter category={category} />
                 {data?.map((item: IProducts) => (
