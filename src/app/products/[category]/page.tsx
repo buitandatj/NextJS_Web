@@ -3,7 +3,9 @@ import Filter from '@/components/FilterCategory/Filter';
 import Product from '@/components/Product/Product';
 import { IProducts } from '@/type/IProducts';
 export default async function Products({ params: { category } }: { params: { category: string } }) {
-    const data = await getData(category)
+    console.log(category);
+    const data = await getData(category);
+
     return (
         <div className='container mx-auto'>
             <h3 className='font-bold text-3xl tracking-widest pl-10'>Products</h3>

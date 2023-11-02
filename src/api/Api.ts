@@ -1,3 +1,4 @@
+import { titleCase } from "@/helper/titleCase";
 import axios from "axios";
 export const instance = axios.create({
   baseURL: process.env.NEXT_PUBLIC_API_URL,
@@ -8,7 +9,8 @@ export async function getData(category?: string) {
   try {
     const res = await instance.get(`products`, {
       params: {
-        category: !category || category === "all" ? undefined : category,
+        category:
+          !category || category === "all" ? undefined : titleCase(category),
       },
     });
     const data = res.data;
@@ -74,11 +76,18 @@ export const deleteUser = async (UserId: string | number | any) => {
   }
 };
 //get Order
-// export const getOrders = async () => {
-//   try {
-//     const res = await instance.get("orders");
-//     return res.data;
-//   } catch (error) {
-//     console.log("get orders error", error);
-//   }
-// };
+export const getOrders = async () => {
+  try {
+    const res = await axios.get("http://localhost:3001/orders");
+    return res.data;
+  } catch (error) {
+    console.log("get orders error", error);
+  }
+};
+//delete Order
+export const deleteOrder = async (id: string | number) => {
+  try {
+    const res = await instance.delete(`orders/${id}`);
+    return res.data;
+  } catch (error) {}
+};

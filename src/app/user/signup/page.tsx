@@ -1,6 +1,7 @@
 'use client'
 import { addUser, getUser } from '@/api/Api';
 import { SignUpCheck } from '@/constants/Message';
+import { IUser } from '@/type/IUser';
 import axios from 'axios';
 import React, { useState } from 'react';
 import { uuid } from 'uuidv4';
@@ -36,13 +37,16 @@ const SignUp = () => {
             setCheckType(true)
             return;
         }
+
         try {
-            const response = await getUser(`users?email=${emailUser}`);
-            if (response.data.length > 0) {
+            const response = await getUser('users');
+            const checkEmail = response.some((user: IUser) => user.email === emailUser);
+            if (checkEmail) {
                 setValidate(true);
-                setEmailUser('');
+                setEmailUser('')
                 return;
-            } else if (emailUser && nameUser && password) {
+            }
+            else if (emailUser && nameUser && password && userType) {
                 await addUser('users', {
                     id: uuid(),
                     name: nameUser,

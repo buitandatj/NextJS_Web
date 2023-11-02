@@ -1,3 +1,4 @@
+"use client";
 import { addCart, deleteFromCart } from "@/constants/Message";
 import { ICartItem, ICartState } from "@/type/ICart";
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";

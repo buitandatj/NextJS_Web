@@ -4,15 +4,7 @@
       "productName": "Block Printed Black Kimono",
       "desciption": "Material: Kate silk",
       "image": "https://moidien.com/cdn/shop/files/ZVEJFFE7-1-4IKZ-hinh_mat_truoc-0_d97e9d31-f845-4ea3-8625-46c61c2e1ca3_1024x1024.jpg?v=1691481694",
-      "price": 47,
-      "category": "Jacket",
-      "id": "1"
-    },
-    {
-      "productName": "Block Printed Black Kimono",
-      "desciption": "Material: Kate silk",
-      "image": "https://moidien.com/cdn/shop/files/ZVEJFFE7-1-4IKZ-hinh_mat_truoc-0_d97e9d31-f845-4ea3-8625-46c61c2e1ca3_1024x1024.jpg?v=1691481694",
-      "price": 47,
+      "price": 43,
       "category": "Jacket",
       "id": "1"
     },
@@ -164,12 +156,12 @@
   "orders": [
     {
       "id": "950aa423-85ce-4636-bea9-fa13682baa51",
-      "contactEmail": "buitandatcuen@gmail.com",
+      "contactEmail": "3423@gmail.com",
       "firstName": "Bùi",
       "lastName": "Đạt",
-      "address": "11",
-      "phoneNumber": "0376334287",
-      "note": "giao hàng chậm",
+      "address": "200 Dương Đình Hội",
+      "phoneNumber": "123",
+      "note": "giao hàng chậm thôi",
       "products": {
         "items": [
           {
@@ -192,6 +184,13 @@
       "name": "Tấn Đạt",
       "email": "buitandatcuen@gmail.com",
       "type": "admin",
+      "password": "12345"
+    },
+    {
+      "id": "c364c18b-c47a-4056-bc0e-3f075d2fe8be",
+      "name": "Nguyễn",
+      "email": "nguyen@gmail.com",
+      "type": "member",
       "password": "12345"
     }
   ]

@@ -19,6 +19,10 @@ export const SignUpCheck = () => {
 export const LoginSuccess = () => {
   toast.success("Login success");
 };
+export const cancelOrderSuccess = () => {
+  toast.success("Delete Order success");
+};
+
 
 export const addProduct = () => {
   toast.success("Add Product success");

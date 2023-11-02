@@ -1,10 +1,19 @@
-// Trong một file slice, ví dụ userSlice.js
+import { IUser } from "@/type/IUser";
 import { createSlice } from "@reduxjs/toolkit";
+
+const saveUserToLocalStorage = (user: IUser) => {
+  localStorage.setItem("user", JSON.stringify(user));
+};
+const loadUserFromLocalStorage = () => {
+  const userData = localStorage.getItem("user");
+  return userData ? JSON.parse(userData) : null;
+};
 
 const userSlice = createSlice({
   name: "user",
-  initialState: {
+  initialState: loadUserFromLocalStorage() || {
     isLoggedIn: false,
+    id: null,
     email: "",
     password: "",
     userName: "",
@@ -13,17 +22,22 @@ const userSlice = createSlice({
   reducers: {
     login: (state, action) => {
       state.isLoggedIn = true;
+      state.id = action.payload.id;
       state.email = action.payload.email;
       state.password = action.payload.password;
       state.userName = action.payload.userName;
       state.type = action.payload.type;
+      saveUserToLocalStorage(state);
     },
     logout: (state) => {
       state.isLoggedIn = false;
+      state.id = null;
       state.email = "";
       state.password = "";
       state.userName = "";
       state.type = "";
+
+      localStorage.removeItem("user");
     },
   },
 });

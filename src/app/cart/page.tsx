@@ -65,7 +65,7 @@ const Cart = () => {
             <div>
                 <div className='flex justify-end gap-20 text-2xl font-medium tracking-widest'>
                     <div>Subtotal</div>
-                    <div>$ {total}</div>
+                    <div>$ {total.toFixed(1)}</div>
                 </div>
                 <div className='flex justify-end text-lg mt-5'>
                     <ul>
