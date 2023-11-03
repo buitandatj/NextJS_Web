@@ -1,12 +1,13 @@
 'use client'
+import { RootStateUser } from '@/store/store';
 import { useRouter } from 'next/navigation';
 import React from 'react';
 import { useSelector } from 'react-redux';
 
 const Admin = () => {
     const router = useRouter();
-    const isLoggedIn = useSelector((state: any) => state.user.isLoggedIn);
-    const userType = useSelector((state: any) => state.user.type);
+    const isLoggedIn = useSelector((state: RootStateUser) => state.user.isLoggedIn);
+    const userType = useSelector((state: RootStateUser) => state.user.type);
     if (!isLoggedIn || userType !== 'admin') {
         router.push('/user')
         return null;

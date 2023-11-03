@@ -3,7 +3,7 @@ import { AiFillCaretDown, AiFillCaretRight, AiFillCloseSquare } from 'react-icon
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { ICartItem } from '@/type/ICart';
-import { RootState } from '@/store/store';
+import { RootState, RootStateUser } from '@/store/store';
 import { TfiMenu } from 'react-icons/tfi'
 import { BiUserCircle, BiCartAlt } from 'react-icons/bi'
 import { useState } from 'react';
@@ -11,9 +11,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '@/store/userSlice';
 const Header = () => {
     const dispatch = useDispatch();
-    const isLoggedIn = useSelector((state: any) => state.user.isLoggedIn);
-    const userName = useSelector((state: any) => state.user.userName);
-    const userType = useSelector((state: any) => state.user.type);
+    const isLoggedIn = useSelector((state: RootStateUser) => state.user.isLoggedIn);
+    const userName = useSelector((state: RootStateUser) => state.user.userName);
+    const userType = useSelector((state: RootStateUser) => state.user.type);
     const [isMenuVisible, setMenuVisible] = useState(false);
     const [showMenu, setShowMenu] = useState<boolean>(false)
     const cartItems: ICartItem[] = useSelector((state: RootState) => state.cart.items);

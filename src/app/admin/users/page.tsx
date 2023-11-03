@@ -1,5 +1,6 @@
 import { getUser } from '@/api/Api';
 import UserAdmin from '@/components/Admin/users/UserAdmin';
+import { IUser } from '@/type/IUser';
 import React from 'react';
 
 const AdminUser = async () => {
@@ -18,7 +19,7 @@ const AdminUser = async () => {
                     </tr>
                 </thead>
                 <tbody >
-                    {users?.map((item: any) => {
+                    {users?.map((item: IUser) => {
                         return (
                             <tr key={item.id}>
                                 <UserAdmin item={item} />
