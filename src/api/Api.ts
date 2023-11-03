@@ -78,7 +78,7 @@ export const deleteUser = async (UserId: string | number | any) => {
 //get Order
 export const getOrders = async () => {
   try {
-    const res = await axios.get("http://localhost:3001/orders");
+    const res = await instance.get("orders");
     return res.data;
   } catch (error) {
     console.log("get orders error", error);

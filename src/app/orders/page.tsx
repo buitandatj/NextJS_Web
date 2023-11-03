@@ -4,7 +4,6 @@ import { deleteOrder, getOrders } from '@/api/Api';
 import { cancelOrderSuccess } from '@/constants/Message';
 import { IOrder } from '@/type/IOrder';
 import { IProducts } from '@/type/IProducts';
-
 import React, { useState } from 'react';
 
 const Order = () => {
