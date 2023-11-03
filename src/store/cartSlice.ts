@@ -1,18 +1,13 @@
+"use client";
 import { addCart, deleteFromCart } from "@/constants/Message";
 import { ICartItem, ICartState } from "@/type/ICart";
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 const loadCartFromLocalStorage = () => {
-  if (typeof window !== "undefined") {
-    const cartData = localStorage.getItem("cart");
-    return cartData ? JSON.parse(cartData).items : [];
-  } else {
-    return [];
-  }
+  const cartData = localStorage.getItem("cart");
+  return cartData ? JSON.parse(cartData).items : [];
 };
 const saveCartToLocalStorage = (cartItems: ICartItem[]) => {
-  if (typeof window !== "undefined") {
-    localStorage.setItem("cart", JSON.stringify({ items: cartItems }));
-  }
+  localStorage.setItem("cart", JSON.stringify({ items: cartItems }));
 };
 const initialState: ICartState = {
   items: loadCartFromLocalStorage(),

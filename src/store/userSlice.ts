@@ -3,17 +3,11 @@ import { IUser } from "@/type/IUser";
 import { createSlice } from "@reduxjs/toolkit";
 
 const saveUserToLocalStorage = (user: IUser) => {
-  if (typeof window !== "undefined") {
-    localStorage.setItem("user", JSON.stringify(user));
-  }
+  localStorage.setItem("user", JSON.stringify(user));
 };
 const loadUserFromLocalStorage = () => {
-  if (typeof window !== "undefined") {
-    const userData = localStorage.getItem("user");
-    return userData ? JSON.parse(userData) : null;
-  } else {
-    return null;
-  }
+  const userData = localStorage.getItem("user");
+  return userData ? JSON.parse(userData) : null;
 };
 
 const userSlice = createSlice({

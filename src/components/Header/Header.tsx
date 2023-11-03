@@ -79,7 +79,6 @@ const Header = () => {
                             <hr />
                             <div className='flex flex-col'>
                                 <Link href='/orders' className='cursor-pointer' onClick={handleUser}>view orders</Link>
-                                {/* <Link href='/admin' className='cursor-pointer' onClick={handleUser}>admin</Link> */}
                                 {userType === 'admin' && <Link href='/admin' className='cursor-pointer' onClick={handleUser}>admin</Link>}
                             </div>
                         </div>
