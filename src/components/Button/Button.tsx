@@ -1,11 +1,10 @@
 import React from 'react';
-import { ButtonProps } from 'react-scroll/modules/components/Button';
 
-const Button = (props: { title: string; BtnStyles: React.FC<ButtonProps>; }) => {
+const Button = (props: { title: string; BtnStyles: any }) => {
     const title = props.title
     const BtnStyles = props.BtnStyles
     return (
-        <BtnStyles to={''}>{title}</BtnStyles>
+        <BtnStyles>{title}</BtnStyles>
     );
 };
 
