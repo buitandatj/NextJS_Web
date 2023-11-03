@@ -4,8 +4,6 @@ import ProductsOrder from '@/components/Admin/orders/ProductsOrder';
 import ViewProduct from '@/components/Admin/orders/ViewProduct';
 import { IOrder } from '@/type/IOrder';
 import React from 'react';
-import { TbTruckDelivery } from 'react-icons/tb'
-import { TiTick } from 'react-icons/ti'
 const OrderAdmin = async () => {
     const orders = await getOrders()
     return (
@@ -23,7 +21,7 @@ const OrderAdmin = async () => {
                         </tr>
                     </thead>
                     <tbody >
-                        {orders.map((order: IOrder) => {
+                        {orders?.map((order: IOrder) => {
                             return (
                                 <tr key={order.id} >
                                     <td className="px-6 py-4 text-lg leading-5 text-gray-900">
@@ -42,7 +40,6 @@ const OrderAdmin = async () => {
                                         {order.note}
                                     </td>
                                     <td className='px-6 py-4 leading-5 text-gray-900 text-2xl flex gap-3'>
-                                        {/* <ProductsOrder order={order} /> */}
                                         <ViewProduct order={order} />
                                     </td>
                                 </tr>

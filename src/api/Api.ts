@@ -1,7 +1,7 @@
 import { titleCase } from "@/helper/titleCase";
 import axios from "axios";
 export const instance = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_URL,
+  baseURL: process.env.VERCEL_URL,
 });
 
 //get Product
