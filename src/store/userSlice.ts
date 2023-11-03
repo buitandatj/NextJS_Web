@@ -2,12 +2,22 @@
 import { IUser } from "@/type/IUser";
 import { createSlice } from "@reduxjs/toolkit";
 
+let userInMemory: IUser | null = null;
 const saveUserToLocalStorage = (user: IUser) => {
-  localStorage.setItem("user", JSON.stringify(user));
+  userInMemory = user;
+  if (typeof window !== "undefined" && window.localStorage) {
+    localStorage.setItem("user", JSON.stringify(user));
+  }
 };
 const loadUserFromLocalStorage = () => {
-  const userData = localStorage.getItem("user");
-  return userData ? JSON.parse(userData) : null;
+  if (userInMemory) {
+    return userInMemory;
+  } else if (typeof window !== "undefined" && window.localStorage) {
+    const userData = localStorage.getItem("user");
+    return userData ? JSON.parse(userData) : null;
+  } else {
+    return null;
+  }
 };
 
 const userSlice = createSlice({

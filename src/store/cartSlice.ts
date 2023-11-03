@@ -2,12 +2,22 @@
 import { addCart, deleteFromCart } from "@/constants/Message";
 import { ICartItem, ICartState } from "@/type/ICart";
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-const loadCartFromLocalStorage = () => {
-  const cartData = localStorage.getItem("cart");
-  return cartData ? JSON.parse(cartData).items : [];
-};
+let cartInMemory: ICartItem | null | any = null;
 const saveCartToLocalStorage = (cartItems: ICartItem[]) => {
-  localStorage.setItem("cart", JSON.stringify({ items: cartItems }));
+  cartInMemory = cartItems;
+  if (typeof window !== "undefined" && window.localStorage) {
+    localStorage.setItem("cart", JSON.stringify({ items: cartItems }));
+  }
+};
+
+const loadCartFromLocalStorage = () => {
+  if (cartInMemory) {
+    return cartInMemory;
+  } else if (typeof window !== "undefined" && window.localStorage) {
+    const cartData = localStorage.getItem("cart");
+    return cartData ? JSON.parse(cartData).items : [];
+  }
+  return [];
 };
 const initialState: ICartState = {
   items: loadCartFromLocalStorage(),
