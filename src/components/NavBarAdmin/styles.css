@@ -1,0 +1,16 @@
+@media (max-width:480px){
+    .nav_bar__admin{
+        display: flex;
+        flex-direction: column;
+    }
+    .menu_nav_bar{
+        display: flex;
+        flex-direction: row;
+    }
+    .menu_nav_bar div{
+        font-size: 1.3rem;
+    }
+    .table_admin{
+        width: 100%;
+    }
+}

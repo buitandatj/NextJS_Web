@@ -4,7 +4,7 @@
       "productName": "Block Printed Black Kimono",
       "desciption": "Material: Kate silk",
       "image": "https://moidien.com/cdn/shop/files/ZVEJFFE7-1-4IKZ-hinh_mat_truoc-0_d97e9d31-f845-4ea3-8625-46c61c2e1ca3_1024x1024.jpg?v=1691481694",
-      "price": 43,
+      "price": 45,
       "category": "Jacket",
       "id": "1"
     },
@@ -155,26 +155,35 @@
   ],
   "orders": [
     {
-      "id": "950aa423-85ce-4636-bea9-fa13682baa51",
-      "contactEmail": "3423@gmail.com",
-      "firstName": "Bùi",
-      "lastName": "Đạt",
-      "address": "200 Dương Đình Hội",
-      "phoneNumber": "123",
-      "note": "giao hàng chậm thôi",
+      "id": "7df32438-b04a-4e1a-8482-bf668461683e",
+      "contactEmail": "a@gmail.com",
+      "firstName": "Nay",
+      "lastName": "Nguyen",
+      "address": "Hà Nội",
+      "phoneNumber": "012345678",
+      "note": "ghi chú",
       "products": {
         "items": [
           {
-            "productName": "Block Printed White Kimono",
-            "desciption": "Material: Kate silk",
-            "image": "https://moidien.com/cdn/shop/files/ZVEJFFE7-1-P1P4-hinh_mat_truoc-0_fe0a696b-5ec0-405c-8d1e-f21a03987633_1024x1024.jpg?v=1691481740",
-            "price": 40,
+            "productName": "Folded Pants",
+            "desciption": "",
+            "image": "https://moidien.com/cdn/shop/files/410869BD-3920-483C-AA9E-A1271A1A744E_1024x1024.jpg?v=1693967725",
+            "price": 58,
+            "category": "Pants",
+            "id": "12",
+            "count": 2
+          },
+          {
+            "productName": "Summer Jacket",
+            "desciption": "",
+            "image": "https://moidien.com/cdn/shop/files/ZVEJFFE7-1-TKBB-hinh_mat_truoc-0_1ac06be2-4505-4711-bcf0-6fb8e2fb2e1a_1024x1024.jpg?v=1691481886",
+            "price": 47.2,
             "category": "Jacket",
-            "id": "2",
+            "id": "7",
             "count": 1
           }
         ],
-        "total": "40.0"
+        "total": "163.2"
       }
     }
   ],

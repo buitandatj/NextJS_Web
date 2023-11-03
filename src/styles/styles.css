@@ -8,3 +8,5 @@
 @import '../app/products/[category]/[id]/styles.css';
 @import '../app/products/[category]/styles.css';
 @import '../app/orders/styles.css';
+@import '../components/NavBarAdmin/styles.css';
+@import '../components/Admin/orders/styles.css';

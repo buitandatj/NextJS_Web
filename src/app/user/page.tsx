@@ -2,6 +2,7 @@
 import { getUser } from '@/api/Api';
 import { LoginSuccess } from '@/constants/Message';
 import { login } from '@/store/userSlice';
+import { IUser } from '@/type/IUser';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
@@ -26,8 +27,8 @@ const Login = () => {
         try {
             const res = await getUser('users')
             const users = res;
-            const user = users.find((item: any) => item.email === email && item.password === password);
-            const userCheck = users.find((item: any) => item.password !== password && item.email === email);
+            const user = users.find((item: IUser) => item.email === email && item.password === password);
+            const userCheck = users.find((item: IUser) => item.password !== password && item.email === email);
             if (user) {
                 dispatch(login({ email: user.email, password: user.password, userName: user.name, type: user.type }));
                 LoginSuccess()

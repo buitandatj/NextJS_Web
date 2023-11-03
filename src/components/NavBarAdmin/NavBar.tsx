@@ -6,8 +6,8 @@ import React from 'react';
 const NavBar = () => {
     const params = usePathname()
     return (
-        <nav className="p-4 h-full w-full text-black">
-            <ul className="flex flex-col gap-5 text-start">
+        <nav className="nav__bar p-4 h-full w-full text-black">
+            <ul className="menu_nav_bar flex flex-col gap-5 text-start">
                 <div className={`text-lg font-medium tracking-widest ${params === '/admin/products' ? 'activeList' : ''}`}>
                     <Link href='/admin/products'>Products</Link>
                 </div>

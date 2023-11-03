@@ -1,9 +1,8 @@
 /* eslint-disable react/jsx-key */
 'use client'
-import { addProductAdmin } from '@/api/Api';
+import { addProductAdmin, instance } from '@/api/Api';
 import { addProduct } from '@/constants/Message';
 import { IProducts } from '@/type/IProducts';
-import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import React, { ChangeEvent, FormEvent, useEffect, useState } from 'react';
 import { uuid } from 'uuidv4';
@@ -18,17 +17,19 @@ const CreateProduct = () => {
         category: '',
         image: '',
     });
-    const [category, setCategory] = useState([])
+    const [category, setCategory] = useState<string[]>([]);
     const [checkName, setCheckName] = useState(true)
     const [checkDes, setCheckDes] = useState(true)
     const [checkPrice, setCheckPrice] = useState(true)
     const [checkImage, setCheckImage] = useState(true)
     const [checkCategory, setCheckCategory] = useState(true)
-    const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLInputElement> | any) => {
+    const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
-        const updatedProduct: any = { ...product };
-        updatedProduct[name] = value;
-        setProduct(updatedProduct);
+        setProduct((prevProduct) => ({
+            ...prevProduct,
+            [name]: value
+        }));
+
         if (product.productName) {
             setCheckName(true)
         }
@@ -48,12 +49,11 @@ const CreateProduct = () => {
     };
     useEffect(() => {
         const getCategory = async () => {
-            const res = await axios.get('http://localhost:3001/products')
+            const res = await instance.get('products')
             const data = res.data
-            const uniqueCategories = new Set(data.map((item: any) => item.category));
-            const categories: any = Array.from(uniqueCategories);
+            const uniqueCategories = new Set(data.map((item: IProducts) => item.category));
+            const categories: string[] = Array.from(uniqueCategories) as string[];
             setCategory(categories)
-
         }
         getCategory()
     }, [])
@@ -94,7 +94,7 @@ const CreateProduct = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="max-w-md mx-auto p-4 space-y-4">
+        <form onSubmit={handleSubmit} className="max-w-md mx-auto  space-y-4">
             <h3 className='text-xl font-bold tracking-widest uppercase flex justify-center'>Create</h3>
             <div>
                 <label htmlFor="productName" className="block text-gray-600 text-lg font-medium tracking-widest">Product Name</label>

@@ -1,0 +1,13 @@
+@media(max-width:480px){
+    .product_order{
+        width: 80%;
+        min-height: 400px;
+    }
+    .block_order{
+        flex-direction: column;
+        align-items: center;
+    }
+    .block_order img{
+        width: 150px;
+    }
+}

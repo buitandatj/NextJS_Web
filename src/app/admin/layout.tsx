@@ -12,11 +12,11 @@ export default function RootLayout({
     return (
         <div className='container mx-auto mb-10'>
             <h3 className='font-bold text-3xl tracking-widest pl-10 mb-10'>Admin</h3>
-            <div className='flex justify-between'>
-                <div className='w-[10%]'>
+            <div className='nav_bar__admin flex justify-between'>
+                <div className='md:w-[15%] sm:w-[20%]'>
                     <NavBar />
                 </div>
-                <div className='w-[90%]'>
+                <div className='md:w-[85%] table_admin sm:w-[80%]'>
                     {children}
                 </div>
             </div>

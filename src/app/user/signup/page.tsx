@@ -126,7 +126,7 @@ const SignUp = () => {
                             className={checkType ? 'w-full p-2 border border-[red] rounded focus:outline-none focus:border-indigo-500 text-gray-800' : 'w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-indigo-500 text-gray-800'}
                         >
                             <option value="">{checkType ? 'Please choose' : 'Select User Type'}</option>
-                            <option value="admin">Admin</option>
+                            <option value="admin" disabled>Admin</option>
                             <option value="member">Member</option>
                         </select>
                     </div>

@@ -1,3 +1,4 @@
+'use client'
 import { IUser } from "@/type/IUser";
 import { createSlice } from "@reduxjs/toolkit";
 
