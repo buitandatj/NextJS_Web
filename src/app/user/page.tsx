@@ -25,7 +25,7 @@ const Login = () => {
             return;
         }
         try {
-            const res = await getUser('users')
+            const res = await getUser('usersNext')
             const users = res;
             const user = users.find((item: IUser) => item.email === email && item.password === password);
             const userCheck = users.find((item: IUser) => item.password !== password && item.email === email);

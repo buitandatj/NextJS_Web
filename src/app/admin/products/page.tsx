@@ -6,7 +6,6 @@ import Link from 'next/link';
 import React from 'react';
 
 const AdminProduct = async ({ params: { category } }: { params: { category: string } }) => {
-
     const data = await getData(category)
     return (
         <div>
