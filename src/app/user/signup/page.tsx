@@ -39,7 +39,7 @@ const SignUp = () => {
         }
 
         try {
-            const response = await getUser('users');
+            const response = await getUser('usersNext');
             const checkEmail = response.some((user: IUser) => user.email === emailUser);
             if (checkEmail) {
                 setValidate(true);
@@ -47,7 +47,7 @@ const SignUp = () => {
                 return;
             }
             else if (emailUser && nameUser && password && userType) {
-                await addUser('users', {
+                await addUser('usersNext', {
                     id: uuid(),
                     name: nameUser,
                     email: emailUser,

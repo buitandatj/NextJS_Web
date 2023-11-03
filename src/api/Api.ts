@@ -1,13 +1,13 @@
 import { titleCase } from "@/helper/titleCase";
 import axios from "axios";
 export const instance = axios.create({
-  baseURL: process.env.VERCEL_URL,
+  baseURL: process.env.NEXT_PUBLIC_API_URL,
 });
 
 //get Product
 export async function getData(category?: string) {
   try {
-    const res = await instance.get(`products`, {
+    const res = await instance.get(`productsNext`, {
       params: {
         category:
           !category || category === "all" ? undefined : titleCase(category),
@@ -21,7 +21,7 @@ export async function getData(category?: string) {
 }
 export async function getProduct(id: string) {
   try {
-    const res = await instance.get(`products/${id}`);
+    const res = await instance.get(`productsNext/${id}`);
     const data = res.data;
     return data;
   } catch (error) {
@@ -42,7 +42,7 @@ export async function addProductAdmin(url: string, productData: object) {
 //delete product
 export async function deleteProduct(productId: number) {
   try {
-    const res = await instance.delete(`products/${productId}`);
+    const res = await instance.delete(`productsNext/${productId}`);
     return res.data;
   } catch (error) {
     console.log("Error deleting product: ", error);
@@ -69,7 +69,7 @@ export const addUser = async (url: string, userData: object) => {
 };
 export const deleteUser = async (UserId: string | number | any) => {
   try {
-    const res = await instance.delete(`users/${UserId}`);
+    const res = await instance.delete(`usersNext/${UserId}`);
     return res.data;
   } catch (error) {
     console.log("get user error", error);
@@ -78,7 +78,7 @@ export const deleteUser = async (UserId: string | number | any) => {
 //get Order
 export const getOrders = async () => {
   try {
-    const res = await instance.get("orders");
+    const res = await instance.get("ordersNext");
     return res.data;
   } catch (error) {
     console.log("get orders error", error);
@@ -87,7 +87,7 @@ export const getOrders = async () => {
 //delete Order
 export const deleteOrder = async (id: string | number) => {
   try {
-    const res = await instance.delete(`orders/${id}`);
+    const res = await instance.delete(`ordersNext/${id}`);
     return res.data;
   } catch (error) {}
 };

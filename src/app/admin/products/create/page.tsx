@@ -49,7 +49,7 @@ const CreateProduct = () => {
     };
     useEffect(() => {
         const getCategory = async () => {
-            const res = await instance.get('products')
+            const res = await instance.get('productsNext')
             const data = res.data
             const uniqueCategories = new Set(data.map((item: IProducts) => item.category));
             const categories: string[] = Array.from(uniqueCategories) as string[];
@@ -76,7 +76,7 @@ const CreateProduct = () => {
             return
         }
         try {
-            await addProductAdmin('products', product);
+            await addProductAdmin('productsNext', product);
             setProduct({
                 id: uuid(),
                 productName: '',

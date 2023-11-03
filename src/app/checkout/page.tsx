@@ -58,7 +58,7 @@ const CheckOut = () => {
                 total: total.toFixed(1),
             }
         };
-        const res = await instance.post('orders', orderData)
+        const res = await instance.post('ordersNext', orderData)
         try {
             dispatch(clearCart());
             setContactEmail('');

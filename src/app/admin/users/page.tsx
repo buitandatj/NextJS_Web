@@ -3,7 +3,7 @@ import UserAdmin from '@/components/Admin/users/UserAdmin';
 import React from 'react';
 
 const AdminUser = async () => {
-    const users = await getUser('users')    
+    const users = await getUser('usersNext')    
     return (
         <div>
         <div className="w-full overflow-auto h-[900px]">
