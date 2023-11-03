@@ -1,13 +1,19 @@
-'use client'
+"use client";
 import { IUser } from "@/type/IUser";
 import { createSlice } from "@reduxjs/toolkit";
 
 const saveUserToLocalStorage = (user: IUser) => {
-  localStorage.setItem("user", JSON.stringify(user));
+  if (typeof window !== "undefined") {
+    localStorage.setItem("user", JSON.stringify(user));
+  }
 };
 const loadUserFromLocalStorage = () => {
-  const userData = localStorage.getItem("user");
-  return userData ? JSON.parse(userData) : null;
+  if (typeof window !== "undefined") {
+    const userData = localStorage.getItem("user");
+    return userData ? JSON.parse(userData) : null;
+  } else {
+    return null;
+  }
 };
 
 const userSlice = createSlice({
