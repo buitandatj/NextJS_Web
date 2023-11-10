@@ -3,6 +3,7 @@ import { addUser, getUser } from '@/api/Api';
 import { SignUpCheck } from '@/constants/Message';
 import { IUser } from '@/type/IUser';
 import axios from 'axios';
+import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 import { uuid } from 'uuidv4';
 const SignUp = () => {
@@ -16,6 +17,7 @@ const SignUp = () => {
     const [checkPass, setCheckPass] = useState(false)
     const [checkPassLenght, setCheckPassLenght] = useState(false)
     const [checkType, setCheckType] = useState(false)
+    const router = useRouter()
     const handleSubmit = async (e: { preventDefault: () => void; }) => {
         e.preventDefault()
         if (!emailUser) {
@@ -47,7 +49,7 @@ const SignUp = () => {
                 return;
             }
             else if (emailUser && nameUser && password && userType) {
-                await addUser('usersNext', {
+                await axios.post('https://dat-api.vercel.app/usersNext', {
                     id: uuid(),
                     name: nameUser,
                     email: emailUser,
@@ -60,6 +62,7 @@ const SignUp = () => {
                 setPassword('');
                 setUserType('');
                 SignUpCheck();
+                router.push('/user')
             }
         } catch (error) {
             console.log('erorr sign up', error);
